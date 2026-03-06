@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Intake | Coaches.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #00ff88; --bg: #0a0a0a; --card: #141414; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg);
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .intake-container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--card);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #222;
+        }
+
+        h2 { font-size: 2rem; font-weight: 900; margin-bottom: 10px; color: var(--accent); }
+        p.subtitle { color: #888; margin-bottom: 30px; font-size: 0.9rem; }
+
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; color: #aaa; text-transform: uppercase; }
+        
+        input, select, textarea {
+            width: 100%;
+            background: #000;
+            border: 1px solid #333;
+            padding: 12px;
+            color: #fff;
+            font-family: inherit;
+            border-radius: 4px;
+        }
+
+        input:focus { border-color: var(--accent); outline: none; }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--accent);
+            color: #000;
+            border: none;
+            padding: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover { background: #fff; }
+
+        .back-link { display: block; text-align: center; margin-top: 20px; color: #555; text-decoration: none; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <div class="intake-container">
+        <h2>IDENTIFY THE GAP.</h2>
+        <p class="subtitle">Complete this assessment for Coach Liz Achoki to review.</p>
+
+        <form id="intakeForm">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="name" required placeholder="Jane Doe">
+            </div>
+
+            <div class="form-group">
+                <label>Your Primary Goal</label>
+                <select id="goal">
+                    <option value="transformation">Body Transformation</option>
+                    <option value="mobility">Mobility & Posture</option>
+                    <option value="performance">Athletic Performance</option>
+                    <option value="express">Time-Efficient Results</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Current Biggest Obstacle</label>
+                <textarea id="obstacle" rows="3" placeholder="What is stopping you from progressing?"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Weekly Commitment (Days)</label>
+                <input type="number" id="days" min="1" max="7" placeholder="3">
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+
+        <a href="index.html" class="back-link">← Return to Coaches.com</a>
+    </div>
+
+    <script>
+        document.getElementById('intakeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Application Received. Coach Liz Achoki will review your profile within 24 hours.");
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
